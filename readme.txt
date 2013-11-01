@@ -35,7 +35,7 @@ To provide a map with the width and height of 500 * 400,
 centered at latitude : 39.900 , longitude : 116.403
 with a zoom of '12'
 
-[bmap width="500" height="400" lat="39.900" lng="116.403" zoom="12"]
+`[bmap width="500" height="400" lat="39.900" lng="116.403" zoom="12"]`
 
 Options :
 - width 	: width of the map entered in pixels
@@ -70,4 +70,3 @@ To use Baidu Maps, you need to have a Baidu Developers API Key.
 To obtain the API Key please visit : http://lbsyun.baidu.com/apiconsole/key?application=key
 
 
-`<?php code(); // goes in backticks ?>`
