@@ -19,6 +19,8 @@ With Custom Baidu Maps you can customize each map with multiple locations with o
 coordinates, add a description, choose background and font colors and upload your own custom marker image.
 
 
+Plugin developed by [Digital Creative](http://www.digitalcreative.asia), Shanghai.
+
 == Installation ==
 
 Follow the steps below for the plugin installation :
