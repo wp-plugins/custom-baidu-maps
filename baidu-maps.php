@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Baidu Maps Plugin
+Plugin Name: Custom Baidu Maps
 Plugin URI: http://www.digitalcreative.asia/
 Description: A Wordpress Plugin to easily integrate baidu maps
 Version: 1.0
