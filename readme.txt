@@ -19,6 +19,16 @@ With Custom Baidu Maps you can customize each map with multiple locations with o
 coordinates, add a description, choose background and font colors and upload your own custom marker image.
 
 
+== Installation ==
+
+Follow the steps below for the plugin installation :
+
+
+1. Upload `baidu-maps.zip` to the `/wp-content/plugins/` directory or add the plugin via wordpress plugin repository.
+1. Activate the plugin through the 'Plugins' menu in WordPress.
+1. Enter your Baidu Developer API key in the settings page.
+
+
 Basic Usage with shortcodes :
 
 To provide a map with the width and height of 500 * 400,
@@ -52,34 +62,12 @@ Adding a Marker on the map (optional) :
 1. Click on "Show Marker Details" if you wish to see the details visible at start.
 
 
-
-== Installation ==
-
-Follow the steps below for the plugin installation :
-
-
-1. Upload `baidu-maps.zip` to the `/wp-content/plugins/` directory or add the plugin via wordpress plugin repository.
-1. Activate the plugin through the 'Plugins' menu in WordPress.
-1. Enter your Baidu Developer API key in the settings page.
-
-
 == Frequently Asked Questions ==
 
 = Why is the plugin showing an error "You have not entered your Baidu Developers API Key" =
 
 To use Baidu Maps, you need to have a Baidu Developers API Key.
 To obtain the API Key please visit : http://lbsyun.baidu.com/apiconsole/key?application=key
-
-
-
-== Screenshots ==
-
-
-== Changelog ==
-
-
-
-== Upgrade Notice ==
 
 
 `<?php code(); // goes in backticks ?>`
