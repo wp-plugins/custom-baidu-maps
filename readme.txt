@@ -12,7 +12,7 @@ locations in to your site.
 
 == Description ==
 
-Easily create Custom Baidu Maps to add to any Wordpress ost or page. You can create one or multiple maps 
+Easily create Custom Baidu Maps to add to any Wordpress post or page. You can create one or multiple maps 
 with our easy to use settings panel, then insert the map using a shortcode.
 
 With Custom Baidu Maps you can customize each map with multiple locations with options to add/change location 
