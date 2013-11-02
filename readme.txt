@@ -21,6 +21,10 @@ coordinates, add a description, choose background and font colors and upload you
 
 Plugin developed by [Digital Creative](http://www.digitalcreative.asia), Shanghai.
 
+
+
+*Baidu API key required. In order to obtain a Baidu API you must have access to a mobile phone number from China.
+
 == Installation ==
 
 Follow the steps below for the plugin installation :
