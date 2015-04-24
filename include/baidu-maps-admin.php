@@ -5,7 +5,7 @@ class Baidu_Maps_Admin {
 	public function __construct( $plugin_url ) {
 
 		// Register Plugins Settings
-		$settings_page = new Baidu_Maps_Settings();
+		$settings_page = new Baidu_Maps_Settings( $plugin_url );
 
 		// Create the custom post-type and the meta boxes
 		add_action( 'init', array( $this, 'register_post_types' ) );
@@ -55,7 +55,7 @@ class Baidu_Maps_Admin {
 			'has_archive'        => false,
 			'hierarchical'       => false,
 			'menu_position'      => 100,
-			'menu_icon'          => $this->plugin_url . 'icons/menu-icon.png',
+			'menu_icon'          => 'dashicons-location-alt',
 			'supports'           => array( 'title' )
 		);
 
@@ -66,7 +66,7 @@ class Baidu_Maps_Admin {
 	 *
 	 */
 	public function create_meta_box() {
-		add_meta_box( 'bmap-map-details', __( 'Map Settings', 'baidu-maps' ), array( $this, 'render_meta_box_map_details' ), 'bmap', 'side', 'low' );
+		add_meta_box( 'bmap-map-details', __( 'Map Settings', 'baidu-maps' ), array( $this, 'render_meta_box_map_details' ), 'bmap', 'side', 'high' );
 		add_meta_box( 'bmap-map-markers', __( 'Map Markers', 'baidu-maps' ), array( $this, 'render_meta_box_map_markers' ), 'bmap', 'normal', 'low' );
 		add_meta_box( 'bmap-map-location-check', __( 'Location Finder (Search in chinese only) ', 'baidu-maps' ), array( $this, 'render_meta_box_map_location_check' ), 'bmap', 'normal', 'high' );
 		add_meta_box( 'bmap-map-branding', 'Digital Creative', array( $this, 'render_meta_box_branding' ), 'bmap', 'side', 'high' );
@@ -154,7 +154,9 @@ class Baidu_Maps_Admin {
 				case 'text':
 					$html[] = "<input type='text' name='" . $field['id'] . "' id='" . $field['id'] . "' value='" . $meta . "' size='10'>";
 					$html[] = "<br>";
-					$html[] = "<span class='description'>" . $field['description'] . "</span>";
+					if ( isset( $field['description'] ) ) {
+						$html[] = "<span class='description'>" . $field['description'] . "</span>";
+					}
 					break;
 
 				case 'checkbox':
@@ -207,7 +209,12 @@ class Baidu_Maps_Admin {
 				$meta_icon        = $marker[$prefix . 'icon' . '-' . $marker_count];
 				$meta_bgcolor     = $marker[$prefix . 'bgcolor' . '-' . $marker_count];
 				$meta_fgcolor     = $marker[$prefix . 'fgcolor' . '-' . $marker_count];
-				$meta_isopen      = $marker[$prefix . 'isopen' . '-' . $marker_count];
+
+				if (isset($marker[$prefix . 'isopen' . '-' . $marker_count])) {
+					$meta_isopen = $marker[$prefix . 'isopen' . '-' . $marker_count];
+				}else{
+					$meta_isopen = false;
+				}
 				$checked_isopen   = $meta_isopen ? "checked='checked'" : "";
 
 
@@ -266,11 +273,7 @@ class Baidu_Maps_Admin {
 		$baidu_maps_api = new Baidu_Maps_API();
 
 		$id  = 'admin-map-element';
-		$map = $baidu_maps_api->createMapElement( $id, '0', '300', TURE );
-
-//		$default_lat  = '39.915';
-//		$default_lng  = '116.404';
-//		$default_zoom = '13';
+		$map = $baidu_maps_api->createMapElement( $id, '0', '300', true );
 
 		$default_lat = get_post_meta( $post->ID, 'baidu_maps_meta_center_lat', true );
 		if ( empty( $default_lat ) ) $default_lat = '39.915';
@@ -319,7 +322,7 @@ class Baidu_Maps_Admin {
 	public function render_meta_box_branding( $post_id ) {
 
 		$html[] = "<p>" . __( 'Baidu maps plugin developed in Shanghai by', 'baidu-maps' ) . "</p>";
-		$html[] = "<a href='http://www.digitalcreative.asia'><img class='logo' src='{$this->plugin_url}icons/dc_asia_logo.png'></a>";
+		$html[] = "<a href='http://www.digitalcreative.asia'><img class='logo' src='{$this->plugin_url}assets/img/dcasia.png'></a>";
 		$html[] = "<div class='bottom'><a href='http://www.digitalcreative.asia' class='website'>www.digitalcreative.asia</a></div>";
 
 		echo implode( "\n", $html );
