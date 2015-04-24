@@ -80,8 +80,11 @@ A Detailed guide on how to create the API Key is available in the Settings Page
 
 = 1.1 =
 
-PHP warnings fixed
-Added instructions to create the Baidu Developers API Key
+PHP warnings fixed and added instructions to create the Baidu Developers API Key
+
+= 1.2 =
+
+PHP warnings fixed and added instructions to create the Baidu Developers API Key
 
 
 == Upgrade Notice ==
