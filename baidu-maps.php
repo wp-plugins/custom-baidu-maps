@@ -3,7 +3,7 @@
 Plugin Name: Baidu Maps Plugin
 Plugin URI: http://www.digitalcreative.asia/
 Description: A Wordpress Plugin to easily integrate baidu maps
-Version: 1.1
+Version: 1.2
 Author: Digital Creative
 Author URI: http://www.digitalcreative.asia/
 License:
